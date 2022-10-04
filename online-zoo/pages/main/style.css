@@ -12,10 +12,14 @@ body {
 
 }
 
+.logo_orange {
+    display: none;
+}
+
 header {
     position: absolute;
     width: 100%;
-    z-index: 1;
+    z-index: 6;
     height: 80px;
     background-color: #000000;
     backdrop-filter: blur(2px);
@@ -116,6 +120,36 @@ header {
 }
 
 
+.header_burger {
+    display: none;
+    width: 18px;
+    height: 10px;
+    position: relative;
+}
+
+.burger__line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #FFFFFF;
+    right: 0;
+
+}
+
+.burger__liine_first {
+    top: 0;
+}
+
+.burger__line_second {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger__line_third {
+    bottom: 0;
+}
+
 
 /* .navigation-item:first-child a:active {
     color: #FFFFFF;
@@ -124,7 +158,7 @@ header {
 .watch_your_favorite_animal_online {
     background: url(../../assets/images/Giant\ Panda.jpg) center;
     background-size: cover;
-    z-index: 0;
+    z-index: 5;
     position: absolute;
     height: 780px;
     left: 0px;
@@ -1578,13 +1612,135 @@ textarea {
 
     header {
         height: 34px;
-
+        position: fixed;
+        top: 0;
+      
     }
+
+    .logo_active {
+        margin-right: 90%;
+    }
+
 
 
     .navigation {
-        display: none;
+        position: fixed;
+        width: 100%;
+        height: 369px;
+        top: 0;
+        left: 0;
+        background-color: #E5E5E5;
+        z-index: 10;
+        transform: translateX(-100%);
+        transition: .2s linear;
+
     }
+    .navigation_active {
+        transform: translateX(0);
+
+    }
+
+    .logo_burger {
+        position: absolute;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+
+    .logo_orange {
+        display: block;
+        margin-bottom: 58.4px;
+    }
+
+    .navigation-item:last-child {
+        margin-left: 0px;
+    }
+
+    .logo_burger_border {
+        box-sizing: border-box;
+        border: 0.8px solid #FE9013;
+        border-radius: 2px;
+        width: 65.6px;
+        height: 41.6px;
+    }
+
+    .logo_burger a {
+        text-decoration: none;
+    }
+
+    .logo_burger h1 {
+        margin: 2.84px 3.8px;
+        vertical-align: top;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 15.21px;
+        line-height: 120%;
+        text-align: center;
+        color: #FE9013;
+    }
+
+    .img_burger {
+        position: absolute;
+        left: 9px;
+        top: 19.64px;
+        content: url(../../assets/icons/bamboo_burger_orange.svg);
+
+    }
+
+    .navigation-item {
+        padding-bottom: 15px;
+    }
+
+    .navigation-item a {
+        text-decoration: none;
+        color: #333B41;
+    }
+
+    .navigation {
+        margin-left: 0;
+    }
+
+    .navigation-list {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    .header_burger {
+        display: block;
+    }
+
+
+    .header_nav-close {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+    }
+
+    .header_nav-close-line {
+        display: block;
+        height: 2px;
+        background-color: #000000;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+
+    .header_nav-close-line:first-child {
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .header_nav-close-line:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+
+
+
+
 
 
 
@@ -1975,12 +2131,127 @@ textarea {
 
     header {
         height: 34px;
-
+        position: fixed;
+        top: 0;
+    }
+    .logo_active {
+        margin-right: 78%;
     }
 
 
+
     .navigation {
-        display: none;
+        position: fixed;
+        width: 100%;
+        height: 369px;
+        top: 0;
+        left: 0;
+        background-color: #E5E5E5;
+        z-index: 10;
+        transform: translateX(-100%);
+        transition: .2s linear;
+
+    }
+    .navigation_active {
+        transform: translateX(0);
+
+    }
+
+    .logo_burger {
+        position: absolute;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+
+    .logo_orange {
+        display: block;
+        margin-bottom: 58.4px;
+    }
+
+    .navigation-item:last-child {
+        margin-left: 0px;
+    }
+
+    .logo_burger_border {
+        box-sizing: border-box;
+        border: 0.8px solid #FE9013;
+        border-radius: 2px;
+        width: 65.6px;
+        height: 41.6px;
+    }
+
+    .logo_burger a {
+        text-decoration: none;
+    }
+
+    .logo_burger h1 {
+        margin: 2.84px 3.8px;
+        vertical-align: top;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 15.21px;
+        line-height: 120%;
+        text-align: center;
+        color: #FE9013;
+    }
+
+    .img_burger {
+        position: absolute;
+        left: 9px;
+        top: 19.64px;
+        content: url(../../assets/icons/bamboo_burger_orange.svg);
+
+    }
+
+    .navigation-item {
+        padding-bottom: 15px;
+    }
+
+    .navigation-item a {
+        text-decoration: none;
+        color: #333B41;
+    }
+
+    .navigation {
+        margin-left: 0;
+    }
+
+    .navigation-list {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    .header_burger {
+        display: block;
+    }
+
+
+    .header_nav-close {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+    }
+
+    .header_nav-close-line {
+        display: block;
+        height: 2px;
+        background-color: #000000;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+
+    .header_nav-close-line:first-child {
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .header_nav-close-line:last-child {
+        transform: translateY(-50%) rotate(-45deg);
     }
 
     .logo h1 {
@@ -2232,7 +2503,7 @@ textarea {
     }
 
     .testimonials {
-
+        max-width: 320px;
         margin-top: 30px;
         margin-bottom: 60px;
     }
@@ -2354,6 +2625,7 @@ textarea {
     .rss_info p {
         font-size: 15px;
     }
+
     .rss_info {
         padding-bottom: 26px;
     }
