@@ -1337,6 +1337,7 @@ input::-webkit-inner-spin-button {
 
     .amount {
         margin-left: -18px;
+        padding-bottom: 0;
     }
 
     .article_amount {
@@ -1799,6 +1800,7 @@ input::-webkit-inner-spin-button {
         font-size: 13px;
         top: 15px;
         margin-left: -7px;
+        padding-bottom: 0;
     }
 
     .input_container {
