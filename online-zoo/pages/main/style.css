@@ -2191,7 +2191,7 @@ textarea {
     .pop-up_wrapper {
         position: absolute;
         left: 50%;
-        top: 400%;
+        top: 2940px;
         transform: translate(-50%, -50%);
         z-index: 22;
     }
@@ -2822,7 +2822,7 @@ textarea {
     .pop-up_wrapper {
         position: absolute;
         left: 50%;
-        top: 487%;
+        top: 3600px;
         transform: translate(-50%, -50%);
         z-index: 22;
     }
