@@ -161,31 +161,33 @@ const petsContainer = document.querySelector('.pets-conainer');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 
-for (var a = [], i = 0; i < 7; ++i) a[i] = i;
 
-function shuffle(array) {
-    var tmp, current, top = array.length;
-    if (top) while (--top) {
-        current = Math.floor(Math.random() * (top + 1));
-        tmp = array[current];
-        array[current] = array[top];
-        array[top] = tmp;
-    }
-    return array;
-}
-if (width >= 1000) {
-    a = shuffle(a).slice(1);
-
-}
-if (width < 1000) {
-    a = shuffle(a).slice(3);
-
-}
-
-
-console.log(a);
 
 function createCards() {
+    for (var a = [], i = 0; i < 7; ++i) a[i] = i;
+
+    function shuffle(array) {
+        var tmp, current, top = array.length;
+        if (top) while (--top) {
+            current = Math.floor(Math.random() * (top + 1));
+            tmp = array[current];
+            array[current] = array[top];
+            array[top] = tmp;
+        }
+        return array;
+    }
+    if (width >= 1000) {
+        a = shuffle(a).slice(1);
+
+    }
+    if (width < 1000) {
+        a = shuffle(a).slice(3);
+
+    }
+
+
+    console.log(a);
+
     let cards = '';
 
     for (let i = 0; i < a.length; i++) {
@@ -207,81 +209,120 @@ function createCards() {
 
 function insertCards() {
     let test = document.createElement('div');
-    test.setAttribute('class', 'cards new');
+    test.setAttribute('class', 'cards');
+/*     test.classList.add('new');
+ */    test.innerHTML = createCards();
+
+
+    let test2 = document.querySelector('.cards');
+    test2.after(test);
+
+    if (width > 1556) {
+
+        petsContainer.classList.add('working');
+        petsContainer.style.transform = `translateX(-1179px)`;
+        setTimeout(() => {
+            document.querySelector('.cards').remove();
+            petsContainer.classList.remove('working');
+            petsContainer.style.transform = `translateX(0)`;
+        }, "500")
+    }
+
+    if (width < 1556 && width > 1000) {
+
+        petsContainer.classList.add('working');
+        petsContainer.style.transform = `translateX(-1000px)`;
+        setTimeout(() => {
+            document.querySelector('.cards').remove();
+            petsContainer.classList.remove('working');
+            petsContainer.style.transform = `translateX(0)`;
+        }, "500")
+    }
+
+
+    if (width < 1000 && width > 640) {
+
+        petsContainer.classList.add('working');
+        petsContainer.style.transform = `translateX(-650px)`;
+        setTimeout(() => {
+            document.querySelector('.cards').remove();
+            petsContainer.classList.remove('working');
+            petsContainer.style.transform = `translateX(0)`;
+        }, "500")
+    }
+
+
+}
+
+/* 
+function insertCards2() {
+    let test = document.createElement('div');
+    test.setAttribute('class', 'cards');
     test.innerHTML = createCards();
 
-    /*     
-        let test2 = document.querySelector('.cards');
-        test2.after(test);
-        document.querySelector('.cards').remove();
-        test.setAttribute('class', 'cards'); */
+    petsContainer.prepend(test)
 
-        petsContainer.append(test)
-    document.querySelector('.cards').remove();
-}
+    petsContainer.classList.add('working_left');
 
 
 
 
+} */
 
-/* left.addEventListener('click', () => {
-    insertCards();
-    left.removeEventListener('click', () => {
+function insertCards2() {
+    let test = document.createElement('div');
+    test.setAttribute('class', 'cards');
+    test.innerHTML = createCards();
+    let test2 = document.querySelector('.cards');
+    test2.before(test);
+    petsContainer.classList.add('working');
+
+
+
+
+
+
+        petsContainer.style.transform = `translateX(0px)`;
+
         setTimeout(() => {
-            left.addEventListener('click', ());
-        })
-    })
-    
-}); */
-
-
-
-left.addEventListener('click', (insertCards));
-
-
-
-right.addEventListener('click', insertCards);
+            test2.remove();
+            petsContainer.classList.remove('working');
+        }, "500")
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = petsContainer;
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none"; 
-  }
-
-  slides[slideIndex-1].style.display = "block"; 
 }
 
 
-left.addEventListener('click', (plusSlides(-1)));
-right.addEventListener('click', (plusSlides(1))); */
+
+
+
+
+
+
+
+
+
+function next() {
+    insertCards()
+    right.removeEventListener('click', next)
+    setTimeout(() => {
+        right.addEventListener('click', next)
+    }, "500")
+}
+
+function prev() {
+    insertCards2()
+    left.removeEventListener('click', prev)
+    setTimeout(() => {
+        left.addEventListener('click', prev)
+    }, "500")
+}
+
+
+right.addEventListener('click', next);
+left.addEventListener('click', prev);
+

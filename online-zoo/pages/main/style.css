@@ -348,12 +348,15 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow: hidden;
 }
 
 .left {
     position: absolute;
     top: 46%;
-    left: -82px;
+/*     left: -82px;
+ */    
+    left: 8.625%;
     width: 62px;
     height: 62px;
     border-radius: 31px;
@@ -395,7 +398,9 @@ header {
 .right {
     position: absolute;
     top: 46%;
-    right: -80px;
+/*     right: -80px;
+ */    right: 8.625%;
+
     width: 62px;
     height: 62px;
     border-radius: 31px;
@@ -410,6 +415,7 @@ header {
     row-gap: 20px;
     column-gap: 30px;
     position: relative;
+    transition: all 0.5s all ease;
 }
 
 .pet-container-row {
@@ -420,8 +426,32 @@ header {
 
 .pets-conainer {
     position: relative;
+    display: flex;
 
 }
+
+.working {
+    width: 2346px;
+    transition: all 0.5s;
+}
+
+
+
+
+
+.working_focus {
+    width: 2346px;
+    transform: translateX(-1179px);
+
+}
+
+.working_left {
+    width: 2346px;
+    flex-direction: row-reverse;
+    transform: translateX(-1179px);
+
+/*     transition: all 0.5s;
+ */}
 
 .alnimals_card {
     outline: solid 1px #FA6F32;
@@ -432,6 +462,10 @@ header {
     width: 366px;
     height: 426px;
 
+}
+
+.new {
+    margin-left: 30px;
 }
 
 .card_img {
@@ -1526,6 +1560,12 @@ textarea {
 
     }
 
+    .working {
+        width: 1960px;
+        transition: all 0.5s;
+    }
+
+
     .alnimals_card {
         width: 294px;
         height: 352px;
@@ -1704,7 +1744,10 @@ textarea {
         margin-right: 90%;
     }
 
-
+    .working {
+        width: 1300px;
+        transition: all 0.5s;
+    }
 
     .navigation {
         position: fixed;
@@ -2354,6 +2397,7 @@ textarea {
     .logo_active {
         margin-right: 78%;
     }
+
 
 
 

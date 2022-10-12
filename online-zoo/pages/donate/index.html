@@ -158,8 +158,8 @@
                         </div>
                     </div>
                     <div class="input_container">
-                        <input class="input_amount" type="number" maxlength="4" name="" id=""
-                            placeholder="Another amount">
+                        <input class="input_amount" type="number" size="4" maxlength="4"  name="" id=""
+                            placeholder="Another amount" oninput="javascript:setTimeout (()=>{ maxLength = 4; if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)},1000)">
                             <div class="radiobuttons">
                                 <div class="radiobuttons_box">
                                     <input class="radiobutton" type="radio" id="monthly" name="drone" value="monthly" checked>

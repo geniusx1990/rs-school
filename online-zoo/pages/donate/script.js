@@ -35,7 +35,14 @@ for (const radioButton of radioButtons) {
         if (output_window.value === radioButton.value) {
             radioButton.checked = true;
         }
+        else {
+            radioButton.checked = false;
+        }
     })
+
+    
+
+
 }
 
 
