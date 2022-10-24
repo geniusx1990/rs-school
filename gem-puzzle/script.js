@@ -21,7 +21,7 @@ container.append(footer);
 
 
 
-let results = JSON.parse(localStorage.getItem('result'));
+let results = []; //JSON.parse(localStorage.getItem('result'));
 
 
 let namesOfButtons = ['Shuffle and start', 'Stop', 'Save', 'Results'];
@@ -336,10 +336,10 @@ function app(size, n) {
                 const positionX = Math.abs(cardDisabled.x - card.x);
                 const positionY = Math.abs(cardDisabled.y - card.y);
 
-                if (positionX + positionY > n) {
+/*                 if (positionX + positionY > n) {
                     return
                 }
-
+ */
                 square.style.left = `${cardDisabled.x}px`;
                 square.style.top = `${cardDisabled.y}px`;
 
@@ -365,11 +365,7 @@ function app(size, n) {
                 })
 
                 if (gameWin) {
-                    setTimeout(() => {
 
-                        alert(`Hooray! You solved the puzzle in ${min}:${sec} and ${count} moves!`)
-
-                    }, "800")
                     audio.WINN.play();
 
                     results.push({
@@ -379,7 +375,11 @@ function app(size, n) {
                     })
                     window.localStorage.setItem('result', JSON.stringify(results));
 
+                    setTimeout(() => {
 
+                        alert(`Hooray! You solved the puzzle in ${min}:${sec} and ${count} moves!`)
+
+                    }, "800")
 
                 }
 
