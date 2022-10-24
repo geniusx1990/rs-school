@@ -521,8 +521,8 @@ function app(size, n) {
 
 
 const audio = {
-    TURN: new Audio('turn.mp3'),
-    WINN: new Audio('/game-win.mp3'),
+    TURN: new Audio('./turn.mp3'),
+    WINN: new Audio('./game-win.mp3'),
 };
 
 
