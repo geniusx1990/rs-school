@@ -572,7 +572,7 @@ const resultsButton = document.querySelector('.button3');
 
 resultsButton.addEventListener('click', () => {
 
-    let results = JSON.parse(localStorage.getItem('result'));
+    //let results = JSON.parse(localStorage.getItem('result'));
     grayArea.innerHTML =
         `<div class="pop-up">
                 <div class="pop-up-content">
