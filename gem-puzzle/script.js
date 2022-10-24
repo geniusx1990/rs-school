@@ -336,10 +336,10 @@ function app(size, n) {
                 const positionX = Math.abs(cardDisabled.x - card.x);
                 const positionY = Math.abs(cardDisabled.y - card.y);
 
-/*                 if (positionX + positionY > n) {
+                if (positionX + positionY > n) {
                     return
                 }
- */
+
                 square.style.left = `${cardDisabled.x}px`;
                 square.style.top = `${cardDisabled.y}px`;
 
