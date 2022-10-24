@@ -307,7 +307,16 @@ function app(size, n) {
 
 
     function generateGame() {
-        let count = 0;
+        let count;
+
+        if (localStorage.getItem('count') != undefined) {
+            count = Number(localStorage.getItem('count'))
+
+        } else {
+            count = 0;
+
+        }
+        //labelsTop[1].textContent = count;
 
         const saveButton = document.querySelector('.button2');
 
@@ -378,7 +387,12 @@ function app(size, n) {
                     setTimeout(() => {
 
                         alert(`Hooray! You solved the puzzle in ${min}:${sec} and ${count} moves!`)
-
+                        localStorage.setItem('size', size);
+                        localStorage.setItem('n', n);
+                        deleteDataFromArray()
+                        size = localStorage.getItem('size');
+                        n = localStorage.getItem('n')
+                        app(size, n)
                     }, "800")
 
                 }
@@ -397,6 +411,9 @@ function app(size, n) {
         n = localStorage.getItem('n')
         arrayOfCards = JSON.parse(localStorage.getItem('arrayofdata'))
         console.log(arrayOfCards)
+        /* let d = localStorage.getItem('count');
+        labelsTop[1].innerHTML = d; */
+        //labelsTop[3].innerHTML = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
         generateGame();
 
     } else {
@@ -436,6 +453,9 @@ function app(size, n) {
 
 
     function saveData() {
+        localStorage.setItem('sec', sec);
+        localStorage.setItem('min', min);
+        localStorage.setItem('count', labelsTop[1].textContent);
         localStorage.setItem('arrayofdata', JSON.stringify(arrayOfCards));
         localStorage.setItem('size', size);
         localStorage.setItem('n', n);
