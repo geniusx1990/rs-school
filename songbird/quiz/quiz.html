@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/styles/normalize.css">
+    <link rel="stylesheet" href="../quiz/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Songbird</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <p class="logo">Song<span>Bird</span></p>
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li class="navigation-item"><a href="../main/index.html">Главная</a></li>
+                    <li class="navigation-item"><a href="">Викторина</a></li>
+                    <li class="navigation-item"><a href="">Результаты викторины</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    <main class="main">
+        <div class="main-container container">
+            <section class="categories">
+                <div class="categories_wrapper">
+                    <div class="categories_item">Разминка</div>
+                    <div class="categories_item">Воробьиные</div>
+                    <div class="categories_item">Лесные пттицы</div>
+                    <div class="categories_item">Певчие птицы</div>
+                    <div class="categories_item">Хищные птицы</div>
+                    <div class="categories_item">Морские птицы</div>
+                </div>
+                <div class="answers_score_wrapper">
+                    <span class="info_score">Счет:</span>
+                    <span class="score">0</span>
+                </div>
+            </section>
+            <section class="secret">
+                <div class="secret_wrapper">
+                    <img class="secret_bird" src="../assets/img/secret-bird.jpg" alt="secret bird">
+                    <div class="secret-content">
+                        <h3 class="secret_name">****</h3>
+                        <div class="secret_player">
+                            <div class="player_controls">
+                                <div class="player_icon_question"></div>
+                                <div class="player_progress_wrapper">
+                                    <div class="progress"></div>
+                                    <div class="player_time time_current"></div>
+                                    <div class="player_time time_length"></div>
+                                </div>
+                            </div>
+                            <div class="player_volume volume">
+                                <div class="volume_button"></div>
+                                <div class="volume_slider">
+                                    <input class="volume_progress volume_progress_secret" type="range" min="0"
+                                        max="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="answers">
+                <ul class="answers_select">
+                </ul>
+                <div class="column-description">
+                    <div class="bird-details">
+                        <p class="instruction">
+                            Послушайте плеер<br>
+                            Выберитте птицу из списка
+                        </p>
+                    </div>
+                </div>
+                <button class="next">Следующий уровень</button>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <a class="github-content" href="https://github.com/geniusx1990">
+                <img class="github-icon" src="../assets/img/github.gif" alt="github-icon">
+                <p class="github-name">geniusx1990</p>
+            </a>
+            <p class="year">2022</p>
+            <a href="https://rs.school/js/"><img class="rsschool-icon" src="../assets/img/rs_school_js.svg"
+                    alt="rsschool-icon"></a>
+        </div>
+    </footer>
+
+    <script type="module" src="../quiz/index.js"></script>
+</body>
+
+</html>
