@@ -19,19 +19,20 @@ let scoreStage;
 
 const playBtn = document.querySelector('.player_icon_question');
 
+//audioQuestion.src = birdsData[stage][correctAnswer].audio;
 
-const audioQuestion = new Audio();
+/* const audioQuestion = new Audio();
 function playAudio() {
-    audio.src = // ссылка на аудио-файл;
+    audio.src = audioQuestion.src
         audio.currentTime = 0;
-    audio.play();
+    audio.audioQuestion.play();
 }
 
-/* playBtn.addEventListener('click', () => {
+playBtn.addEventListener('click', () => {
     console.log('aa')
 
     playAudio();
-}) */
+})  */
 
 clearData();
 game(0);
@@ -138,8 +139,6 @@ function fillDescription() {
         </div>
         <div class="answers__text text"><p class="text_paragraph">${birdsData[stage][elementValue].description}</p></div>
         `
-    audioQuestion.src = birdsData[stage][correctAnswer].audio;
-    // console.log(audioQuestion)
 }
 
 
@@ -163,22 +162,15 @@ function game(stage) {
                 score += scoreStage;
                 scoreWindow.textContent = score;
 
-/*                 if (buttonSelect[elementValue].className == 'item_button incorrect' || buttonSelect[elementValue].className == 'item_button correct') {
-                            } else {
-                                score += scoreStage;
-                            } */
                 
-                //buttonSelect[elementValue].classList.add('correct');
                 nameOfBird.textContent = birdsData[stage][elementValue].name;
                 imageOfBird.src = `${birdsData[stage][elementValue].image}`
                 flag = true;
-                //score = score + scoreStage;
+                stage = stage + 1;
     
             } else {
                 audio.TURN.play();
-                //buttonSelect[elementValue].classList.add('incorrect');
-                //scoreStage--;
-    
+
                  if (buttonSelect[elementValue].className == 'item_button incorrect' || buttonSelect[elementValue].className == 'item_button correct') {
                      scoreStage;
                  } else {
