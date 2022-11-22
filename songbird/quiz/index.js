@@ -38,7 +38,6 @@ game(0);
 
 nextLevel.addEventListener('click', () => {
     if (flag == true && stage < 6) {
-        scoreWindow.textContent = score;
         stage = stage + 1;
         console.log(stage)
         clearData();
@@ -52,6 +51,8 @@ nextLevel.addEventListener('click', () => {
 })
 
 function clearData() {
+
+    
     elementValue = 0;
     nameOfBird.textContent = '****';
     imageOfBird.src = `../assets/img/secret-bird.jpg`;
@@ -144,11 +145,12 @@ function fillDescription() {
 
 function game(stage) {
     fillData(stage);
-    const buttonSelect = document.querySelectorAll('.item_button');
+    scoreStage = 5;
 
 
     selectionBlock.addEventListener('click', (e) => {
         console.log(' TEST  ' + stage)
+        const buttonSelect = document.querySelectorAll('.item_button');
 
         elementValue = e.target.closest('.options_item').id;
         console.log('elementValue = ' + elementValue);
@@ -158,10 +160,13 @@ function game(stage) {
             if (elementValue == correctAnswer) {
                 console.log('URRA')
                 audio.WINN.play();
-                if (buttonSelect[elementValue].className == 'item_button incorrect' || buttonSelect[elementValue].className == 'item_button correct') {
+                score += scoreStage;
+                scoreWindow.textContent = score;
+
+/*                 if (buttonSelect[elementValue].className == 'item_button incorrect' || buttonSelect[elementValue].className == 'item_button correct') {
                             } else {
                                 score += scoreStage;
-                            }
+                            } */
                 
                 //buttonSelect[elementValue].classList.add('correct');
                 nameOfBird.textContent = birdsData[stage][elementValue].name;
@@ -175,7 +180,7 @@ function game(stage) {
                 //scoreStage--;
     
                  if (buttonSelect[elementValue].className == 'item_button incorrect' || buttonSelect[elementValue].className == 'item_button correct') {
-                     scoreStage
+                     scoreStage;
                  } else {
                      scoreStage--;
                  } 
