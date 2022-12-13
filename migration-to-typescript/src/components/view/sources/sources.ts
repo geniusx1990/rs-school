@@ -2,11 +2,11 @@ import { SourceItem } from '../../../types';
 import './sources.css';
 
 class Sources {
-    draw(data: SourceItem[]) {
+    draw(data: Array<SourceItem>): void {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
-        data.forEach((item) => {
+        data.forEach((item: SourceItem) => {
             const sourceClone = <HTMLElement>sourceItemTemp.content.cloneNode(true);
 
             const sourceItemName = <HTMLElement>sourceClone.querySelector('.source__item-name');

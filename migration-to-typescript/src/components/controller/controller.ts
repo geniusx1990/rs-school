@@ -1,8 +1,8 @@
-import { NewsItem, SourceItem } from '../../types';
+import { Callback, INews, ISources} from '../../types';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    getSources(callback: (data?: { source: SourceItem[]; }) => void) {
+    getSources(callback: Callback<ISources>): void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -11,7 +11,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: (data?: { articles: NewsItem[]; }) => void) {
+    getNews(e: Readonly<MouseEvent>, callback: Callback<INews>): void {
         let target = <HTMLDivElement>e.target;
         const newsContainer = <HTMLDivElement>e.currentTarget;
 
