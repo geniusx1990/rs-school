@@ -1,0 +1,81 @@
+.buttons-container {
+    display: flex;
+}
+
+.navigation-button {
+    background-color: green;
+    border: none;
+    color: yellow;
+    margin-right: 10px;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.control-wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create,
+.update {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.create-name,
+.color-input,
+.update-name,
+.update-color-input,
+.race-button,
+.reset-button {
+    margin-right: 5px;
+}
+
+.create-button,
+.update-button {
+    background-color: green;
+    border: none;
+    color: yellow;
+    margin-right: 10px;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+
+}
+
+.race-button,
+.reset-button,
+.generate-button {
+    background-color: green;
+    border: none;
+    color: yellow;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.navigation-button:hover,
+.race-button:hover,
+.reset-button:hover,
+.generate-button:hover,
+.create-button:hover,
+.update-button:hover {
+    background-color: red;
+    color: white;
+    transition: 0.5s;
+}
+
+.navigation-button:active,
+.race-button:active,
+.reset-button:active,
+.generate-button:active,
+.create-button:active,
+.update-button:active {
+    background-color: blue;
+    color: white;
+    transition: 0s;
+}
