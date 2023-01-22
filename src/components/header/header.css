@@ -36,7 +36,9 @@
 }
 
 .create-button,
-.update-button {
+.update-button,
+.select-button,
+.remove-button {
     background-color: green;
     border: none;
     color: yellow;
@@ -78,4 +80,46 @@
     background-color: blue;
     color: white;
     transition: 0s;
+}
+
+.car__icon{
+    width: 64px;
+    height: 64px;
+    --icon-url: url("../../../assets/car-svg.svg");
+    mask-image: var(--icon-url);
+    -webkit-mask-image: var(--icon-url);
+    background-color: currentColor;
+    color: red; 
+}
+
+.finish__icon{
+    width: 50px;
+    height: 50px;
+    --icon-url: url("../../../assets/finish.svg");
+    mask-image: var(--icon-url);
+    -webkit-mask-image: var(--icon-url);
+    background-color: currentColor;
+    color: red;
+}
+
+.car-name {
+    margin: 0;
+}
+
+.control-buttons {
+    padding-top: 10px;
+}
+.car-control-wrapper {
+    display: flex;
+}
+
+.a-button {
+    margin-right: 5px;
+}
+
+.track-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
 }

@@ -44,6 +44,10 @@ class App {
     }
 
     run() {
+        let idCars: number[] = [];
+        if(!localStorage.idCars) {
+            localStorage.setItem('idCars', JSON.stringify(idCars));
+        }
         App.container.append(this.header.render());
         App.renderNewPage('garage');
         this.enableRouteChannge();
