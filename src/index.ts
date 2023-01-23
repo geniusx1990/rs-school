@@ -1,4 +1,4 @@
-import App from './pages/app/app';
+import { app } from './app/app';
 
-const app = new App();
-app.run();
+/* const app = new App();
+ */app();

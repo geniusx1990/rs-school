@@ -18,6 +18,36 @@
     flex-direction: column;
 }
 
+
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.links {
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: yellow;
+    background-color: green;
+    border: 10px solid green;
+
+}
+
+.garage-button,
+.winners-button {
+    background-color: green;
+    border: none;
+    color: yellow;
+    margin-right: 10px;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+
 .create,
 .update {
     display: flex;
@@ -38,7 +68,8 @@
 .create-button,
 .update-button,
 .select-button,
-.remove-button {
+.remove-button,
+.race-button {
     background-color: green;
     border: none;
     color: yellow;
@@ -65,7 +96,9 @@
 .reset-button:hover,
 .generate-button:hover,
 .create-button:hover,
-.update-button:hover {
+.update-button:hover,
+.select-button:hover,
+.remove-button:hover {
     background-color: red;
     color: white;
     transition: 0.5s;
@@ -82,24 +115,46 @@
     transition: 0s;
 }
 
-.car__icon{
+.car_icon {
     width: 64px;
     height: 64px;
-    --icon-url: url("../../../assets/car-svg.svg");
-    mask-image: var(--icon-url);
-    -webkit-mask-image: var(--icon-url);
-    background-color: currentColor;
-    color: red; 
-}
-
-.finish__icon{
-    width: 50px;
-    height: 50px;
-    --icon-url: url("../../../assets/finish.svg");
+    --icon-url: url("./assets/car-svg.svg");
     mask-image: var(--icon-url);
     -webkit-mask-image: var(--icon-url);
     background-color: currentColor;
     color: red;
+}
+
+.winner-icon {
+    width: 64px;
+    height: 64px;
+    --icon-url: url("./assets/car-svg.svg");
+    mask-image: var(--icon-url);
+    -webkit-mask-image: var(--icon-url);
+    background-color: currentColor;
+    color: red;
+}
+
+
+.finish_icon {
+    width: 50px;
+    height: 50px;
+    --icon-url: url("./assets/finish.svg");
+    mask-image: var(--icon-url);
+    -webkit-mask-image: var(--icon-url);
+    background-color: currentColor;
+    color: hsl(0, 100%, 50%);
+}
+
+.car-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid;
+}
+
+
+.track {
+    padding-bottom: 22px;
 }
 
 .car-name {
@@ -109,6 +164,7 @@
 .control-buttons {
     padding-top: 10px;
 }
+
 .car-control-wrapper {
     display: flex;
 }
@@ -122,4 +178,18 @@
     justify-content: space-between;
     border-bottom: 2px solid;
     margin-bottom: 10px;
+}
+
+.congtol-wrapper {
+    margin-top: 10px;
+    display: flex;
+}
+
+.update-form-label,
+.update-form-input,
+.create-form-input,
+.update-form-input
+ {
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
